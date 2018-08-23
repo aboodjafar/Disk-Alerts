@@ -6,6 +6,6 @@ do
   partition=$(echo $output | awk '{ print $2 }' )
   if [ $usep -ge 80 ]; then
     echo "Running out of space \"$partition ($usep%)\" on $(hostname) as on $(date)" |
-     mail -s "Alert: Almost out of disk space $usep%" Jafar.Abood@aaa-calif.com,Khan.Haneef@aaa-calif.com,Lum.Edward@aaa-calif.com,Rupapara.Mahesh@aaa-calif.com
+     mail -s "Alert: Almost out of disk space $usep%" Khan.Haneef@calif.com
   fi
 done
