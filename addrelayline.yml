@@ -1,5 +1,5 @@
 ---
-- hosts: hosts6
+- hosts: 
   become: yes
   tasks:
    - name: Add relay line
