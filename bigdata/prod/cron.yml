@@ -1,0 +1,17 @@
+---
+- hosts: prod 
+  become: yes
+  tasks:
+   - name: Copy the script
+     copy:
+      src: /etc/ansible/common_alerts/bigdata/prod/LowDiskAlerts.sh
+      dest: /usr/local/bin
+      mode: 0755
+
+   - name: Create a Low disk space alert cron job
+     cron:
+       name: Low disk alert
+       user: "root"
+       minute: "0"
+       hour: "11"
+       job: "/usr/local/bin/LowDiskAlerts.sh >>/usr/local/bin/LowDiskAlerts.sh.log"
