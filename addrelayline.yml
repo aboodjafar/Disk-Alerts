@@ -6,6 +6,6 @@
      lineinfile: 
         path: /etc/postfix/main.cf
         regexp: '^#relayhost'
-        line: 'relayhost = imail.ace.aaaclubnet.com'
+        line: 'relayhost = emailserver.com 
         state: present
       
