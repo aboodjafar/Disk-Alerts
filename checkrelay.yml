@@ -1,0 +1,11 @@
+---
+- hosts: hosts
+  gather_facts: no 
+  become: yes
+  tasks:
+   - name: Check relay line
+     shell: grep -R "relayhost" "/etc/postfix/main.cf"
+    #shell: sed -n 318p /etc/postfix/main.cf
+     register: relay
+   - debug: var=relay.stdout
+   
