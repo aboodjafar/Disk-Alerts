@@ -1,0 +1,11 @@
+---
+- hosts: hosts6
+  become: yes
+  tasks:
+   - name: Add relay line
+     lineinfile: 
+        path: /etc/postfix/main.cf
+        regexp: '^#relayhost'
+        line: 'relayhost = imail.ace.aaaclubnet.com'
+        state: present
+      
